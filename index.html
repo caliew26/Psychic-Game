@@ -5,8 +5,76 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Psychic-Game</title>
+        <link rel="stylesheet" href="assets/css/style.css">
     </head>
+
     <body>
         
+        <header>
+            <h1>Psychic Game</h1>
+        </header>
+
+        <main>
+            <h2>Guess what letter I'm thinking of ....</h2>
+
+            <h3><span id="Mickey">Oh Boy!</span> You've Won: </h3>
+            <h3><span id="Garsh">Garsh</span>, You Lost: </h3>
+            <h3><span id="Golly">Golly</span>, you only have how many guesses left? </h3>
+            <h4><span id="Zippy">Zippy</span>, your guesses already: <span id="user-text"></span></h4>
+
+
+        </main>
+
+        <script type="text/javascript">
+
+            var computerGuess = [Math.floor(Math.random()* x.number)]
+            var userGuess = [];//random letter chosen by function below
+            var confirmLetter = [];//user input letter
+            var maxNumGuess = 13; //user has 13 guesses to guess the right letter
+
+            var userText = document.getElementById("user-text");
+
+            
+            document.onkeyup = function(event) {
+                userGuess = event.key;
+            };
+
+            //to generate a random letter a - z
+            function generate_random_string(string_length){
+                var random_string = '';
+                var random_ascii;
+
+                for (var i = 0; i < string_length; i++) {
+                    random_ascii = Math.floor((Math.random() * 25) + 97);
+                    random_string += String.fromCharCode(random_ascii)
+                    }
+                return random_string
+            }
+
+            // toLowerCase = function(lower) {
+            //     return Lower.toLowercase();
+            // }
+            // userGuess.map(toUpper);
+
+            // var userGuess = userGuess.map(toLowerCase);
+
+            //  // Next, we give JavaScript a function to execute when onkeyup event fires.
+            // document.onkeyup = function(event) {
+            //     userText.textContent = event.key;
+            // };
+
+            // for (var i =0; i < -1; i--) {
+            //     return maxNumGuess[i];
+            // }
+
+            //need a random number chooser fucntion here
+
+            //need to check if userGUess matches the random number
+
+            //alert when the letter is guessed correctly
+            //document in Zippy place what letters have been guessed
+        
+        </script>
+
     </body>
 </html>

@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: fantasy;
+    font-size: 40px;
+    text-align: center;
+    background-color: black;
+    color: greenyellow;
+    padding: 25px;
+}
+
+h2 {
+    text-align: center;
+    color: #3B72C9;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#user-text {
+    color: hotpink;
+}
+
+h3, h4 {
+    border: 3px solid red;
+    margin: 15px;
+}
