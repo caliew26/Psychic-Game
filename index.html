@@ -27,29 +27,35 @@
 
         <script type="text/javascript">
 
-           //var computerGuess = [Math.floor(Math.random()* x.number)]
+            //creates an array (collection) of letters to guess
+            var computerChoices = ["c", "p", "e", "h", "t", "b", "d"]
             var userGuess = [];//random letter chosen by function below
             var confirmLetter = [];//user input letter
             var maxNumGuess = 13; //user has 13 guesses to guess the right letter
 
-            var userText = document.getElementById("user-text");
-
-            
             document.onkeyup = function(event) {
-                userGuess = event.key;
-            };
+                //determines which key was pressed
+                var userGuess = event.key;
+            
+                //random function to pick one of the letters in the computerChoices array
+                var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
-            //to generate a random letter a - z
-            function generate_random_string(string_length){
-                var random_string = '';
-                var random_ascii;
-
-                for (var i = 0; i < string_length; i++) {
-                    random_ascii = Math.floor((Math.random() * 25) + 97);
-                    random_string += String.fromCharCode(random_ascii)
-                    }
-                return random_string
+                
             }
+
+
+
+            // //to generate a random letter a - z
+            // function generate_random_string(string_length){
+            //     var random_string = '';
+            //     var random_ascii;
+
+            //     for (var i = 0; i < string_length; i++) {
+            //         random_ascii = Math.floor((Math.random() * 25) + 97);
+            //         random_string += String.fromCharCode(random_ascii)
+            //         }
+            //     return random_string
+            // }
 
             // toLowerCase = function(lower) {
             //     return Lower.toLowercase();
@@ -57,11 +63,6 @@
             // userGuess.map(toUpper);
 
             // var userGuess = userGuess.map(toLowerCase);
-
-            //  // Next, we give JavaScript a function to execute when onkeyup event fires.
-            // document.onkeyup = function(event) {
-            //     userText.textContent = event.key;
-            // };
 
             // for (var i =0; i < -1; i--) {
             //     return maxNumGuess[i];
@@ -78,3 +79,13 @@
 
     </body>
 </html>
+
+
+
+
+a random letter is chosen that the user will guess
+user will guess (press) a key to see if they have chosen the correct letter
+the user will get 13 tries to guess the right number
+if they do - user wins one point
+if they do not - log the letter and count backwards to number of tries is 12
+user will guess another letter
