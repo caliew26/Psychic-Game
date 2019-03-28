@@ -23,7 +23,7 @@ h2 {
     color: hotpink;
 }
 
-h3, h4 {
+h3 {
     border: 3px solid red;
     margin: 15px;
 }

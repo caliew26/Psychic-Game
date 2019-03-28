@@ -15,65 +15,66 @@
         </header>
 
         <main>
+
             <h2>Can YOU guess what letter I'm thinking of ....?</h2>
 
-            <h3><span id="Mickey">Oh Boy!</span> You've Won: </h3>
-            <h3><span id="Garsh">Garsh</span>, You Lost: </h3>
-            <h3><span id="Golly">Golly</span>, you only have how many guesses left? </h3>
-            <h4><span id="Zippy">Zippy</span>, your guesses already: <span id="user-text"></span></h4>
-
+            <h3>Oh Boy!You've Won: <span id="mickey"></span></h3>
+            <h3>Garsh, You Lost: <span id="garsh"></span></h3>
+            <h3>Golly, you only have how many guesses left? <span id="golly"></span></h3>
+            <h3>Zippy, you guessed:<span id="zippy"></span></h4>
 
         </main>
 
-        <script type="text/javascript">
+         <script type="text/javascript">
 
             //creates an array (collection) of letters to guess
             var computerChoices = ["c", "p", "e", "h", "t", "b", "d"]
-            var userGuess = [];//random letter chosen by function below
-            var confirmLetter = [];//user input letter
-            var maxNumGuess = 13; //user has 13 guesses to guess the right letter
-
-            document.onkeyup = function(event) {
-                //determines which key was pressed
-                var userGuess = event.key;
             
-                //random function to pick one of the letters in the computerChoices array
-                var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            //capture the keystroke the user chooses
+            var userGuess;
 
+            //user input letter
+            var confirmLetter = [];
+
+            //user has 13 guesses to guess the right letter
+            var gollyMaxNumGuess = 13; 
+
+            //keep track of number of wins
+            var ohBoyWins = 0;
+
+            //keep track of number of loses
+            var garshLoses = 0;
+
+            //need to figure out how to reset everything for a new game --- would that go here?
+            
+            //determines which key was pressed and stores it (var userGuess = event.key)
+            //onkeyup will then run ALL the code within the {}
+            //onkeyup is going to run a function and that function will trigger following functions
+            document.onkeyup = function(event) {
+                var userGuess = event.key;
+
+                //logging the userGuess in the console so I can see if what I have is working thus far
+                console.log(userGuess);
                 
+                //documents onto the screen in the h3 html element id=zippy
+                document.getElementById("zippy").innerHTML = userGuess;
+                
+                //random function to pick one of the letters in the computerChoices array
+                var computerGuess = computerChoices[Math.floor(Math.random() * 7)];
+            
+                //determine if the userGuess matches the computerGuess (computerGuess is declared by the computerChoice random function above)
+                //game over and ohBoyWins will go from 0 to 1
+                if (userGuess === computerGuess) {
+                    alert("Oh Boy! You win!")
+                    document.getElementById("mickey").innerHTML = ohBoyWins++;
+                    console.log(userGuess)
+                } 
+                //if the userGuess does not match, then allow user to keep guessing until gollyMaxNumGuess is 0
+                else {
+                    document.getElementById("golly").innerHTML = gollyMaxNumGuess--
+                    }
             }
 
-
-
-            // //to generate a random letter a - z
-            // function generate_random_string(string_length){
-            //     var random_string = '';
-            //     var random_ascii;
-
-            //     for (var i = 0; i < string_length; i++) {
-            //         random_ascii = Math.floor((Math.random() * 25) + 97);
-            //         random_string += String.fromCharCode(random_ascii)
-            //         }
-            //     return random_string
-            // }
-
-            // toLowerCase = function(lower) {
-            //     return Lower.toLowercase();
-            // }
-            // userGuess.map(toUpper);
-
-            // var userGuess = userGuess.map(toLowerCase);
-
-            // for (var i =0; i < -1; i--) {
-            //     return maxNumGuess[i];
-            // }
-
-            //need a random number chooser fucntion here
-
-            //need to check if userGUess matches the random number
-
-            //alert when the letter is guessed correctly
-            //document in Zippy place what letters have been guessed
         
         </script>
 
@@ -82,10 +83,10 @@
 
 
 
-
+<!-- 
 a random letter is chosen that the user will guess
 user will guess (press) a key to see if they have chosen the correct letter
 the user will get 13 tries to guess the right number
 if they do - user wins one point
 if they do not - log the letter and count backwards to number of tries is 12
-user will guess another letter
+user will guess another letter -->
