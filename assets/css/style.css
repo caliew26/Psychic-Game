@@ -3,20 +3,27 @@
     padding: 0;
 }
 
+img {
+    opacity: 0.5;
+}
+
 h1 {
     font-family: fantasy;
-    font-size: 40px;
+    font-size: 70px;
     text-align: center;
     background-color: black;
-    color: greenyellow;
+    color: yellow;
     padding: 25px;
 }
 
 h2 {
     text-align: center;
-    color: #3B72C9;
+    /*color: #3B72C9;*/
     margin-top: 50px;
     margin-bottom: 50px;
+    font-size: 40px;
+    color: red;
+    text-shadow: 1px 1px 2px whitesmoke;
 }
 
 #user-text {
@@ -24,6 +31,10 @@ h2 {
 }
 
 h3 {
-    border: 3px solid red;
+    border: 3px solid white;
     margin: 15px;
+    text-shadow: 1px 1px 2px black;
+    color: red;
+    font-size: 25px;
+    font-family: fantasy;
 }
