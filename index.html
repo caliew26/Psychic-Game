@@ -9,14 +9,10 @@
 
     </head>
 
-    <body>
-    
-        <img src="assets/images/mickey.jpg" alt="mickey image">
-
-        
+    <body background="assets/images/mickeybw.jpg">
+        <!--<img src="assets/images/disneyborder.jpg" alt="Disney Character Image"> -->
         <header>
             <h1>The Guessing Game</h1>
-            
         </header>
 
         <main>
@@ -24,20 +20,20 @@
             <h2>Can YOU guess what letter I'm thinking of ....?</h2>
             <h2>Go ahead, click any letter on the keyboard!</h2>
 
-            <h3>Oh Boy!  You've Won:    <span id="mickey"></span></h3>
-            <h3>Garsh,  You Lost:    <span id="garsh"></span></h3>
+            <h3>Oh Boy!  You've Won:<span id="mickey"></span></h3>
+            <h3>Garsh,  You Lost:  <span id="garsh"></span></h3>
             <h3>Golly,  you only have how many guesses left?   <span id="golly"></span></h3>
-            <h3>Zippy,  you guessed:   <span id="zippy"></span></h4>
+            <h3>Zippy-do-dah!,  you've guessed:   <span id="zippy"></span></h4>
 
         </main>
 
-         <script type="text/javascript">
+        <script type="text/javascript">
 
             //creates an array (collection) of letters to guess
-            var computerChoices = ["c", "p", "e", "h", "t", "b", "d"]
+            var computerChoices = ["c", "p", "e", "h", "t", "b", "d", "m", "a", "z", "q", "i", "v"]
             
             //capture the keystroke the user chooses
-            var userGuess;
+            var userGuess = [];
 
             //user has 13 guesses to guess the right letter
             var gollyMaxNumGuess = 13; 
@@ -51,7 +47,8 @@
             //reset the game at beginning and after a win/loss
             var resetGuesses = function () {
                 gollyMaxNumGuess = 13;
-                userGuess.length = 0;
+                userGuess = [];
+                var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
                 document.getElementById("golly").innerHTML = gollyMaxNumGuess;
                 }
 
@@ -79,7 +76,6 @@
                     resetGuesses();
                     
                 }
-                
 
                 if(userGuess !== computerGuess && gollyMaxNumGuess < 0) {
                     alert("Garsh, you lose.")
@@ -94,10 +90,7 @@
                     document.getElementById("golly").innerHTML = gollyMaxNumGuess --;
                     }
                 }
-                
-            
-            
-        
+
         </script>
 
     </body>

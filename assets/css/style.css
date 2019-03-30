@@ -1,10 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-}
-
-img {
-    opacity: 0.5;
+    font-weight: bolder;
 }
 
 h1 {
@@ -13,7 +10,7 @@ h1 {
     text-align: center;
     background-color: black;
     color: yellow;
-    padding: 25px;
+    padding: 15px;
 }
 
 h2 {
@@ -23,18 +20,31 @@ h2 {
     margin-bottom: 50px;
     font-size: 40px;
     color: red;
-    text-shadow: 1px 1px 2px whitesmoke;
+    text-shadow: 1px 1px 2px black;
 }
 
-#user-text {
-    color: hotpink;
+#zippy {
+    color:#7B497F;
+}
+
+#golly {
+    color: #FFD000;
+}
+
+#garsh {
+    color: #143EFF;
+}
+
+#mickey {
+    color: #38FF17;
 }
 
 h3 {
     border: 3px solid white;
     margin: 15px;
-    text-shadow: 1px 1px 2px black;
-    color: red;
-    font-size: 25px;
+    /*text-shadow: 1px 1px 2px red;*/
+    color: black;
+    font-size: 35px;
     font-family: fantasy;
+    background-color: #FF530D;
 }
