@@ -47,7 +47,7 @@
             //reset the game at beginning and after a win/loss
             var resetGuesses = function () {
                 gollyMaxNumGuess = 13;
-                userGuess = [];
+                userGuess;
                 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
                 document.getElementById("golly").innerHTML = gollyMaxNumGuess;
                 }
@@ -77,7 +77,7 @@
                     
                 }
 
-                if(userGuess !== computerGuess && gollyMaxNumGuess < 0) {
+                if(userGuess !== computerGuess && gollyMaxNumGuess === 0) {
                     alert("Garsh, you lose.")
                     document.getElementById("garsh").innerHTML = garshLosesCounter += 1;
                     resetGuesses();
